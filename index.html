@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MANTAX Login</title>
+  <style>
+    body {
+      font-family: Arial;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #0d1117;
+      color: white;
+    }
+    .box {
+      text-align: center;
+      padding: 30px;
+      border: 1px solid #30363d;
+      border-radius: 10px;
+      background: #161b22;
+    }
+    input {
+      padding: 10px;
+      width: 250px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #30363d;
+      background: #0d1117;
+      color: white;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background: #238636;
+      color: white;
+      cursor: pointer;
+    }
+    #videoBox {
+      display: none;
+      margin-top: 20px;
+    }
+    #loading {
+      display: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Masuk ke MANTAX</h2>
+    <input type="text" id="username" placeholder="Masukkan Username">
+    <br>
+    <button onclick="login()">Masuk</button>
+    
+    <div id="loading">Loading video...</div>
+    
+    <div id="videoBox">
+      <h3>Demo Zenitsu</h3>
+      <video src="zenitsu.mp4" width="100%" controls></video>
+    </div>
+  </div>
+
+  <script>
+    function login() {
+      const user = document.getElementById('username').value;
+      const loading = document.getElementById('loading');
+      const videoBox = document.getElementById('videoBox');
+      
+      if(user === 'MANTAXBYYANZ123') {
+        loading.style.display = 'block';
+        setTimeout(() => {
+          loading.style.display = 'none';
+          videoBox.style.display = 'block';
+        }, 2000); // loading 2 detik
+      } else {
+        alert('Username salah!');
+      }
+    }
+  </script>
+</body>
+  </html>
